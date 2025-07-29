@@ -1,27 +1,66 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Diccionario Visual de Anatomía</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <h1>Diccionario Visual de Anatomía</h1>
 
-  <div class="cuerpo-container">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Anterior_View_of_the_Human_Body_-_Female_shadow_removed.png" alt="Cuerpo humano" usemap="#cuerpo" class="imagen-cuerpo">
-    <div id="tooltip" class="tooltip"></div>
-
-    <!-- Áreas interactivas -->
-    <map name="cuerpo">
-      <area shape="circle" coords="130,80,25" data-nombre="Cabeza" onmouseover="mostrarNombre(event)" onmouseout="ocultarNombre()">
-      <area shape="circle" coords="130,180,30" data-nombre="Tórax" onmouseover="mostrarNombre(event)" onmouseout="ocultarNombre()">
-      <area shape="circle" coords="130,300,25" data-nombre="Abdomen" onmouseover="mostrarNombre(event)" onmouseout="ocultarNombre()">
-      <area shape="circle" coords="90,370,20" data-nombre="Pierna izquierda" onmouseover="mostrarNombre(event)" onmouseout="ocultarNombre()">
-      <area shape="circle" coords="170,370,20" data-nombre="Pierna derecha" onmouseover="mostrarNombre(event)" onmouseout="ocultarNombre()">
-    </map>
+  <div class="tabs">
+    <button class="tab-btn active" onclick="mostrarSeccion('organos')">Órganos</button>
+    <button class="tab-btn" onclick="mostrarSeccion('huesos')">Huesos</button>
+    <button class="tab-btn" onclick="mostrarSeccion('musculos')">Músculos</button>
+    <button class="tab-btn" onclick="mostrarSeccion('cerebro')">Cerebro</button>
   </div>
+
+  <div class="seccion visible" id="organos">
+    <div class="cuerpo-container">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Human_organs.svg" alt="Órganos" usemap="#organos-map" class="imagen-cuerpo" />
+      <map name="organos-map">
+        <area shape="circle" coords="125,100,25" data-nombre="Corazón" onmouseover="mostrarNombre(event)" onmouseout="ocultarNombre()" />
+        <area shape="circle" coords="125,150,20" data-nombre="Estómago" onmouseover="mostrarNombre(event)" onmouseout="ocultarNombre()" />
+        <area shape="circle" coords="125,200,20" data-nombre="Hígado" onmouseover="mostrarNombre(event)" onmouseout="ocultarNombre()" />
+      </map>
+    </div>
+  </div>
+
+  <div class="seccion" id="huesos">
+    <div class="cuerpo-container">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Skeleton_front_back.svg" alt="Huesos" usemap="#huesos-map" class="imagen-cuerpo" />
+      <map name="huesos-map">
+        <area shape="circle" coords="130,80,20" data-nombre="Cráneo" onmouseover="mostrarNombre(event)" onmouseout="ocultarNombre()" />
+        <area shape="circle" coords="130,140,20" data-nombre="Columna vertebral" onmouseover="mostrarNombre(event)" onmouseout="ocultarNombre()" />
+        <area shape="circle" coords="130,220,20" data-nombre="Fémur" onmouseover="mostrarNombre(event)" onmouseout="ocultarNombre()" />
+      </map>
+    </div>
+  </div>
+
+  <div class="seccion" id="musculos">
+    <div class="cuerpo-container">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/66/Muscular_system_diagram_es.svg" alt="Músculos" usemap="#musculos-map" class="imagen-cuerpo" />
+      <map name="musculos-map">
+        <area shape="circle" coords="130,60,20" data-nombre="Pectorales" onmouseover="mostrarNombre(event)" onmouseout="ocultarNombre()" />
+        <area shape="circle" coords="130,160,20" data-nombre="Abdominales" onmouseover="mostrarNombre(event)" onmouseout="ocultarNombre()" />
+        <area shape="circle" coords="130,240,20" data-nombre="Cuádriceps" onmouseover="mostrarNombre(event)" onmouseout="ocultarNombre()" />
+      </map>
+    </div>
+  </div>
+
+  <div class="seccion" id="cerebro">
+    <div class="cuerpo-container">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/07/Brain_diagram_es.svg" alt="Cerebro" usemap="#cerebro-map" class="imagen-cuerpo" />
+      <map name="cerebro-map">
+        <area shape="circle" coords="100,80,20" data-nombre="Corteza frontal" onmouseover="mostrarNombre(event)" onmouseout="ocultarNombre()" />
+        <area shape="circle" coords="160,80,20" data-nombre="Lóbulo temporal" onmouseover="mostrarNombre(event)" onmouseout="ocultarNombre()" />
+        <area shape="circle" coords="130,130,20" data-nombre="Cerebelo" onmouseover="mostrarNombre(event)" onmouseout="ocultarNombre()" />
+      </map>
+    </div>
+  </div>
+
+  <div id="tooltip" class="tooltip"></div>
 
   <script src="script.js"></script>
 </body>
