@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Diccionario Visual de Anatomía</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Diccionario Visual de Anatomía</h1>
+
+  <div class="cuerpo-container">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Anterior_View_of_the_Human_Body_-_Female_shadow_removed.png" alt="Cuerpo humano" usemap="#cuerpo" class="imagen-cuerpo">
+    <div id="tooltip" class="tooltip"></div>
+
+    <!-- Áreas interactivas -->
+    <map name="cuerpo">
+      <area shape="circle" coords="130,80,25" data-nombre="Cabeza" onmouseover="mostrarNombre(event)" onmouseout="ocultarNombre()">
+      <area shape="circle" coords="130,180,30" data-nombre="Tórax" onmouseover="mostrarNombre(event)" onmouseout="ocultarNombre()">
+      <area shape="circle" coords="130,300,25" data-nombre="Abdomen" onmouseover="mostrarNombre(event)" onmouseout="ocultarNombre()">
+      <area shape="circle" coords="90,370,20" data-nombre="Pierna izquierda" onmouseover="mostrarNombre(event)" onmouseout="ocultarNombre()">
+      <area shape="circle" coords="170,370,20" data-nombre="Pierna derecha" onmouseover="mostrarNombre(event)" onmouseout="ocultarNombre()">
+    </map>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
